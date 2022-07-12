@@ -1,3 +1,5 @@
+//GOMEZ ARENILLAS LAUTARO https://youtu.be/n5nr3Br8GL0
+
 int pantalla;
 int posXp1 = 10;
 int posYp1 = 200;
