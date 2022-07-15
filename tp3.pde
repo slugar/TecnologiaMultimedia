@@ -1,5 +1,4 @@
 //GOMEZ ARENILLAS LAUTARO https://youtu.be/n5nr3Br8GL0
-
 int pantalla;
 int posXp1 = 10;
 int posYp1 = 200;
@@ -18,9 +17,11 @@ float dirYpel = 1;
 //marcador
 int marcador = 3;
 int marcador2 = 3;
+
 void setup() {
   size(400, 400);
   pantalla=1;
+  Reinicio();
 }
 
 
