@@ -13,11 +13,11 @@ dirYpel *= -1;
 void condicion(){
  if(posXpel <= 20 && posYpel <= sizeP1 + posYp1 && posYpel >= posYp1){
    dirXpel *= -1;
-   dirYpel *= -1;
+   
  }
  if(posXpel >= width - 20 && posYpel <= sizeP2 + posYp2 && posYpel >= posYp2){
    dirXpel *= -1;
-   dirYpel *= -1;
+   
  }
   
 }
