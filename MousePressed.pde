@@ -3,6 +3,7 @@ void mousePressed(){
   pantalla=2;
  }
   else if(pantalla==2){pantalla=1;
+  Reinicio();
   }
    
  }
