@@ -1,4 +1,4 @@
-class pelota
+class Pelota
 {
 
   float x;  //pelota x
@@ -8,7 +8,7 @@ class pelota
   float D; //diametro
 
   //constructor de pelota
-  pelota()
+  Pelota()
   {
     x = 300;
     y = 400;
@@ -43,9 +43,9 @@ class pelota
   //cambiar la direccion de la pelota en Y
   void changeY()
   {
-    vy *= -1; 
+    vy *= -1;
   }
-  
+
 
   //reseteo de la pelota en el caso de perder una vida
   void reset()

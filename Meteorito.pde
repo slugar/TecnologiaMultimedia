@@ -1,4 +1,4 @@
-class meteorito
+class Meteorito
 {
   float x; //meteorito x
   float y; //meteorito y
@@ -8,9 +8,9 @@ class meteorito
 
 
   // constructor del meteorito
-  meteorito()
+  Meteorito()
   {
-   
+
     x = random(10, width-10); //genera meteoritos en una posicion aleatoria en lo alto de la pantalla
     y = 0; //meteorito empieza en Y
     vy = 2; //velocidad en Y de meteorito 

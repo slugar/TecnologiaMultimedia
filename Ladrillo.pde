@@ -1,17 +1,17 @@
-class ladrillo
+class Ladrillo
 {
-  float x; //brick x
-  float y; //brick y
-  float w; //brick width
-  float h; //brich height
-  float r; //brick red val
-  float g; //grick green val
-  float b; //brick blue val
+  float x; //ladrillo x
+  float y; //ladrillo y
+  float w; //ladrillo width
+  float h; //ladrillo height
+  float r; //ladrillo rojo
+  float g; //ladrillo verde
+  float b; //ladrillo azul
 
   boolean hit; //si el ladrillo ha sido golpeado o no
 
 
-    ladrillo(float x0, float y0)
+  Ladrillo(float x0, float y0)
   {
     x = x0;
     y = y0;
