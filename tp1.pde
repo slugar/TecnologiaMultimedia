@@ -1,80 +1,83 @@
-float move=600;
-int pantalla;
-PImage SW, IM1;
+float angulo = 0;
+float velocidadRotacion;
+color colorCirculo;
+color colorCentro;
+float centroX, centroY;
+float umbralGlitch = 10;
+float tamanoGradiente = 150;
+int cantidadCirculos = 6;
+float margen;
+float tamanoInicial = 400;
+float tamanoFinal = 100;
+
 void setup() {
   size(600, 600);
-  pantalla=1;
-  SW= loadImage("Star_Wars.png");
-  IM1= loadImage("image2.jpg");
-}
-void draw() { //pantalla star wars
-  if (pantalla==1) {
-    pushStyle();
-    background(0);
-    if (move>width/8+5) {
-      move=move-1;
-    }
-    textSize(50);
-    image(SW, 0, move, 600, 400);
-    popStyle();
-    if (move<100) {
-      textAlign(CENTER);
-      text("Click para empezar", width/2, 500);
-    }
-  }
-  if (pantalla==2) {//pantalla inicio star wars
-    pushStyle();
-    background(0);
-    move=move-1;
-    textSize(30);
-    textAlign(CENTER);
-    fill(random(100, 200));
-    text(" La República Galáctica está \n sumida en disturbios. Hay \n protestas contra la tributación \n de las rutas comerciales \n a sistemas esteleres", width/2, move);
-    text(" Esperando resolver el problema \n con un bloqueo de mortíferos \n cruceros, la avariciosa \n Federación de Comercio ha \n detenido todos los envios al \n pequeño planeta de Naboo. \n ", width/2, move+500);
-    text(" Mientras el Congreso de la \n República debate sin fin \n esta alarmante cadena de \n acontecimientos, el Canciller \n Supremo ha despachado en \n secreto a dos Caballeros Jedi, \n los guardianes de la paz y la \n justicia en la galaxia, a resolver \n el conflicto…", width/2, move+1000);  
-    if (move>=height*2) {
-      move=move/2;
-    }
-    if (move<-1400) {
-      textAlign(CENTER);
-      text("Click para continuar", width/2, height/2);
-      popStyle();
-    }
-  }
-  if (pantalla==3) { //pantalla creditos 
-  pushStyle();
-    background(0);
-    move=move-1;
-    textSize(20);
-    textAlign(CENTER);
-    text("LUCASFILM ANIMATION SINGAPORE THANKS JEFFREY LIM\n JIANLIANG TAN \n JEAN YANG• \n JOHN SANDERS \n XAVIER NICOLAS \n \n SPECIAL THANKS \n IN MEMORY OF GRANDMA JEAN BUCZYNSKI, 1917-2009 \n GINÀ TORRES, MUJER MAS LINDA DEL MUNDO \n TO MY WONDERFUL WIFE AND PAÄTNER IN CRIME PAM AND THE TWO BEST", width/2, move);
+  smooth();
+  noStroke();
+  frameRate(60);
   
-  if (move<-200) {
-    textAlign(CENTER);
-    fill(25,255,0);
-    text("Click para continuar", width/2, height/2);
-    popStyle();
-  }
+  centroX = width / 2;
+  centroY = height / 2;
+  
+  margen = (tamanoInicial - tamanoFinal) / cantidadCirculos;
 }
-if (pantalla==4) { //pantalla cast
+
+void draw() {
   background(0);
-  move=move-1;
-  textSize(20);
-  textAlign(CENTER);
-  text("CAST \n \n  Obi-Wan Kenobi *WAN MCGREGOR \n Padmé NATALIE PORTMAN \n Anakin Skywalker HAYDEN CHRISTENSEN \n Supreme Chancellor Palpatine IAN McDIARMID \n Mace Windu SAMUEL L. JACKSON \n Senator Bail Organa JIMMY SMITS \n Yoda FRANK OZ \n C-3PO ANTHONY DANIELS \n Count Dooku CHRISTOPHER LEE \n Queen of Nabo KEISHA CASTLE-HUGHES \n Ki-Adi-Mundi & Nute Gunray SILAS CARSON \n Captain Typho JAY LAGA'AIA \n Tion Medon BRUCE SPENCE \n Governor Tarkin WAYNE PYGRAM", width/2, move);
-if (move<-300) {
-    textAlign(CENTER);
-    fill(25,255,0);
-    text("Click para reiniciar", width/2, height/2);
-    popStyle();
+  
+  // Calcula la velocidad de rotación en función de la distancia del mouse al centro
+  float distancia = dist(mouseX, mouseY, centroX, centroY);
+  velocidadRotacion = map(distancia, 0, width / 2, 0, 0.1);
+  
+  // Cambia el color del círculo exterior en función de la posición del mouse
+  if (mouseX > 400 && mouseY > 400) {
+    float umbralColor = map(distancia, 0, width / 2, 0, 255);
+    colorCirculo = color(0, 0, 255, umbralColor);
+    colorCentro = lerpColor(color(255), color(0), umbralColor / 255);
+  } else {
+    float umbralColor = map(distancia, 0, width / 2, 0, 255);
+    colorCirculo = color(255, 0, 0, umbralColor);
+    colorCentro = lerpColor(color(0), color(255), umbralColor / 255);
   }
-}
-}
-void mousePressed() {
-  if (pantalla!=4) {
-    pantalla++;
-  } else if (pantalla==4) {
-    pantalla=1;
+  
+  // Dibuja los círculos que rotan
+  translate(centroX, centroY);
+  rotate(radians(angulo));
+  
+  for (int i = 0; i < cantidadCirculos; i++) {
+    float tamanoCirculo = tamanoInicial - i * margen;
+    float colorRelleno = map(i, 0, cantidadCirculos - 1, 0, 255);
+    fill(lerpColor(colorCirculo, color(0), colorRelleno / 255));
+    ellipse(0, 0, tamanoCirculo, tamanoCirculo);
   }
-  move=600;
+  
+  angulo += velocidadRotacion;
+  
+  // Dibuja el círculo blanco en el centro
+  float distanciaCentro = dist(mouseX, mouseY, centroX, centroY);
+  
+  if (distanciaCentro < tamanoGradiente) {
+    float cantidadGradiente = map(distanciaCentro, 0, tamanoGradiente, 0, 255);
+    colorCentro = lerpColor(colorCentro, color(255), cantidadGradiente / 255);
+  }
+  
+  fill(colorCentro);
+  ellipse(centroX, centroY, 100, 100);
+  
+  // Dibuja el efecto glitch en coordenadas fijas
+  float velocidadMouse = dist(pmouseX, pmouseY, mouseX, mouseY);
+  
+  if (velocidadMouse > umbralGlitch) {
+    pushMatrix(); // Guarda la transformación actual
+    translate(0, 0); // Mueve el origen al punto (0, 0)
+    rotate(radians(angulo)); // Aplica la rotación
+      
+    stroke(255);
+    
+    for (int y = 0; y < height; y += 10) {
+      line(0, y, width, y);
+    }
+    
+    popMatrix(); // Restaura la transformación guardada
+  }
 }
