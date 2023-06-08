@@ -1,3 +1,5 @@
+//https://www.youtube.com/watch?v=zDvcv0fWk4Y
+
 let angulo = 0;
 let velocidadRotacion;
 let colorCirculo;
