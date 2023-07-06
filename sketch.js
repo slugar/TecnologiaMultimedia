@@ -11,10 +11,10 @@ let colorCentro;
 let centroX, centroY;
 const umbralGlitch = 10;
 const tamanoGradiente = 150;
-const cantidadCirculos = 6;
+const cantidadCirculos = 16;
 let margen;
-const tamanoInicial = 400;
-const tamanoFinal = 100;
+const tamanoInicial = 510;
+const tamanoFinal = 10;
 let tamanoCirculo;
 let tamanoImagenCentro;
 const tamanoImagenCentroInicial = 200; // Tamaño inicial del círculo central de imágenes
@@ -95,28 +95,28 @@ function draw() {
   push();
   translate(centroX, centroY);
   rotate(radians(angulo));
-
   for (let i = 0; i < cantidadCirculos; i++) {
     tamanoCirculo = tamanoInicial - i * margen;
     const colorRelleno = map(i, 0, cantidadCirculos - 1, 0, 255);
-
+  
     push();
     rotate(radians(-angulo * (i + 1)));
-
+  
     const escala = tamanoCirculo / tamanoInicial;
-
+  
     imageMode(CENTER);
     colorMode(RGB);
     tint(red(colorCirculo), green(colorCirculo), blue(colorCirculo));
-    image(imagen, 0, 0, imagen.width * escala, imagen.height * escala);
+    image(imagen, 0, 0, imagen.width * escala+30, imagen.height * escala+30);
     noTint();
-
+  
     pop();
-
+  
     noStroke();
     fill(lerpColor(colorCirculo, color(0), colorRelleno / 255));
     ellipse(0, 0, tamanoCirculo, tamanoCirculo);
   }
+  
 
   pop();
 
