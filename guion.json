@@ -3,7 +3,7 @@
    "audio" : "audios/Narración.mp3", 
    
    "data" : [
-  {
+ {
         "tiempo":"00:00",
         "camara":"Camara13",
         "target":"Target13",
