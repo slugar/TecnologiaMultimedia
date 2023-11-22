@@ -1,34 +1,34 @@
 {
-   "modelo":"modelos/TP3.glb",
-   "audio" : "audios/Narración.mp3", 
+   "modelo":"modelos/TP33.glb",
+   "audio" : "audios/cucucucucucu2.mp3", 
    
    "data" : [
- {
+   {
         "tiempo":"00:00",
         "camara":"Camara13",
         "target":"Target13",
-        "nombre":"vista Inicial",
+        "nombre":"Vista Inicial",
         "duracion":3000
    },
    {
         "tiempo":"00:05",
-        "nombre":"segunda vista",
+        "nombre":"Primer acercamiento a cama",
         "camara":"Camara2",
         "target":"Target2",
         "duracion":5000
     },
     
  {
-    "tiempo":"00:14",
-    "nombre":"vista jarron",
+    "tiempo":"00:12",
+    "nombre":"Vista jarron",
     "camara":"Camara11",
     "target":"Target11",
     "duracion":2500
   },
 
   {
-   "tiempo":"00:20",
-   "nombre":"segunda vista",
+   "tiempo":"00:18",
+   "nombre":"Frente de cama",
    "camara":"Camara2",
    "target":"Target2",
    "duracion":1000
@@ -36,14 +36,14 @@
 
 
 {
- "tiempo":"00:24",
- "nombre":"vista casco",
+ "tiempo":"00:22",
+ "nombre":"Vista casco",
  "camara":"Camara14",
  "target":"Target14",
  "duracion":2000
 },
 {
- "tiempo":"00:26",
+ "tiempo":"00:24",
  "nombre":"Vista lampra",
  "camara":"Camara3",
  "target":"Target3",
@@ -52,21 +52,21 @@
 
 {
    "tiempo":"00:30",
-   "nombre":"ultima vista",
+   "nombre":"Jarron sobre mueble",
    "camara":"Camara11",
    "target":"Target11",
    "duracion":1500
  },
  {
    "tiempo":"00:33",
-   "nombre":"novena vista",
+   "nombre":"Jarron cayendo de costado izquierdo",
    "camara":"Camara9",
    "target":"Target9",
    "duracion":1000
   },
   {
    "tiempo":"00:40",
-   "nombre":"jarron roto",
+   "nombre":"Jarron roto",
    "camara":"Camara8",
    "target":"Target8",
    "duracion":1500
@@ -74,14 +74,14 @@
 
 {
    "tiempo":"00:50",
-   "nombre":"segunda vista",
+   "nombre":"Frente de camax2",
    "camara":"Camara2",
    "target":"Target2",
    "duracion":1500
 },
 {
    "tiempo":"00:55",
-   "nombre":"vista casco",
+   "nombre":"Vista cascox2",
    "camara":"Camara14",
    "target":"Target14",
    "duracion":2000
@@ -89,7 +89,7 @@
 
   {
    "tiempo":"00:58",
-   "nombre":"Vista lampra",
+   "nombre":"Vista lamprax2",
    "camara":"Camara3",
    "target":"Target3",
    "duracion":2000
@@ -97,20 +97,138 @@
 
   {
    "tiempo":"01:06",
-   "nombre":"ultima vista2",
+   "nombre":"Jarroto cenital",
    "camara":"Camara12",
    "target":"Target12",
    "duracion":3000
 },
 
 {
-   "tiempo":"01:16",
-   "nombre":"segunda vista",
+   "tiempo":"01:12",
+   "nombre":"Frente de camax3",
    "camara":"Camara2",
    "target":"Target2",
+   "duracion":1500
+},
+{
+   "tiempo":"01:18",
+   "nombre":"Vista cascox3",
+   "camara":"Camara14",
+   "target":"Target14",
+   "duracion":1500
+},
+{
+   "tiempo":"01:22",
+   "nombre":"Vista lamprax4",
+   "camara":"Camara3",
+   "target":"Target3",
+   "duracion":1500
+  },
+  {
+   "tiempo":"01:24",
+   "camara":"Camara13",
+   "target":"Target13",
+   "nombre":"Vista Inicial media",
+   "duracion":2000
+},
+{
+   "tiempo":"01:26",
+   "nombre":"Jarroto cenitalx2",
+   "camara":"Camara12",
+   "target":"Target12",
+   "duracion":1500
+},
+{
+   "tiempo":"01:28",
+   "nombre":"Jarroto de costado",
+   "camara":"Camara6",
+   "target":"Target6",
+   "duracion":1500
+},
+{
+   "tiempo":"01:32",
+   "nombre":"Jarron volador derecho",
+   "camara":"Camara7",
+   "target":"Target7",
    "duracion":1000
-
-   }
+  },
+  {
+   "tiempo":"01:34",
+   "nombre":"Vista jarron",
+   "camara":"Camara11",
+   "target":"Target11",
+   "duracion":2500
+ },
+ {
+   "tiempo":"01:36",
+   "nombre":"Vista cascox5",
+   "camara":"Camara14",
+   "target":"Target14",
+   "duracion":3000
+},
+{
+   "tiempo":"01:40",
+   "nombre":"Vista lamprax5",
+   "camara":"Camara3",
+   "target":"Target3",
+   "duracion":3500
+  },
+  {
+   "tiempo":"01:48",
+   "nombre":"Frente de camax4",
+   "camara":"Camara2",
+   "target":"Target2",
+   "duracion":3000
+},
+{
+   "tiempo":"01:52",
+   "nombre":"Jarron restaurado",
+   "camara":"Camara11",
+   "target":"Target11",
+   "duracion":2500
+ },
+{
+ "tiempo":"01:55",
+ "nombre":"Jarron volador derecho",
+ "camara":"Camara7",
+ "target":"Target7",
+ "duracion":2000
+},
+{
+   "tiempo":"01:57",
+   "nombre":"Jarroto de costado",
+   "camara":"Camara6",
+   "target":"Target6",
+   "duracion":1500
+},
+{
+ "tiempo":"02:00",
+ "nombre":"Jarron roto",
+ "camara":"Camara8",
+ "target":"Target8",
+ "duracion":3000
+},
+{
+    "tiempo":"02:05",
+    "nombre":"Vista casco final",
+    "camara":"Camara14",
+    "target":"Target14",
+    "duracion":5000
+ },
+ {
+   "tiempo":"02:07",
+   "nombre":"Frente de cama final",
+   "camara":"Camara2",
+   "target":"Target2",
+   "duracion":3000
+},
+{
+   "tiempo":"02:13",
+   "camara":"Camara13",
+   "target":"Target13",
+   "nombre":"Vista Inicial final",
+   "duracion":5000
+}
    ]
 }
  
